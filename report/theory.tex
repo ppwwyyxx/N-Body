@@ -1,0 +1,22 @@
+% File: theory.tex
+% Date: Fri May 10 23:40:38 2013 +0800
+% Author: Yuxin Wu <ppwwyyxxc@gmail.com>
+\section{Algorithms}
+\label{sec:theory}
+N体问题\cite{nbody}是在给定一些物体的质量,位置及速度的情形下,计算未来时间中物体如何运动.
+本程序是对N体问题的数值模拟,采用纯粹的引力方法\cite{simulation}进行计算.
+
+程序在每次循环中,首先根据牛顿引力公式$ \overrightarrow F_{12} = -\dfrac{GM_1M_2}{|\overrightarrow r_{12}|^2} \dfrac{\overrightarrow r_{12}}{|\overrightarrow r_{12}|}$
+分别算出每个物体在这一瞬间的加速度$ \overrightarrow a_t = \sum_{i \ne t}{\dfrac{GM_i \overrightarrow r_{ti}}{|\overrightarrow r_{ti}| ^3} }$,
+然后利用$ \Delta \overrightarrow v_t = \overrightarrow a_t$更新各物体的速度.
+\cppsrcpart{res/src/Body.cc}{16}{21}
+
+随后,程序判断是否有碰撞发生.判断依据为一个循环的$ dt$时间内是否会有两球的距离小于半径之和,即
+$|\overrightarrow r_{ti} +  x\overrightarrow{(v_i - v_t)}| \le R_i + R_t$
+是否有 $ 0\le x \le dt$的解.由此找出最先与球$ t$相撞的球,将两球都移动到碰撞点,计算并更新其碰撞后的速度.
+\cppsrcpart{res/src/Body.cc}{23}{41}
+
+碰撞时,先将速度分解到碰撞方向与碰撞点的切线方向.
+由于碰撞方向上的动量守恒,碰撞点切线方向上的速度不变,再加上能量守恒,可以类似\cite{collision}中的一维情形
+列出方程求解.
+\cppsrcpart{res/src/Body.cc}{43}{48}

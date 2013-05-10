@@ -1,0 +1,105 @@
+Sender: LSF System <lsfadmin@c26b15>
+Subject: Job 836339: <mpirun.lsf ./mpi -b 40000 -t 5> Done
+
+Job <mpirun.lsf ./mpi -b 40000 -t 5> was submitted from host <ln0> by user <2011011271> in cluster <cluster1>.
+Job was executed on host(s) <12*c26b15>, in queue <short>, as user <2011011271> in cluster <cluster1>.
+                            <12*c19b15>
+                            <12*c15b02>
+                            <12*c19b17>
+                            <12*c15b14>
+</tmp/.lsbtmp679> was used as the home directory.
+</home/course/2012/zhyq/2011011271/WORK> was used as the working directory.
+Started at Thu Aug 30 23:56:01 2012
+Results reported at Thu Aug 30 23:56:29 2012
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+mpirun.lsf ./mpi -b 40000 -t 5
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time   :   1083.51 sec.
+    Max Memory :         6 MB
+    Max Swap   :        98 MB
+
+    Max Processes  :         3
+    Max Threads    :         4
+
+The output (if any) follows:
+
+18.127686 seconds in total...
+Job  /jobmgr/lsf8.0/8.0/linux2.6-glibc2.3-x86_64/bin/intelmpi_wrapper ./mpi -b 40000 -t 5
+
+TID   HOST_NAME   COMMAND_LINE            STATUS            TERMINATION_TIME
+===== ========== ================  =======================  ===================
+00000 c15b14     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00001 c15b14     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00002 c15b14     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00003 c15b14     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00004 c15b14     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00005 c15b14     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00006 c15b14     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00007 c15b14     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00008 c15b14     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00009 c15b14     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00010 c15b14     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00011 c15b14     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00012 c19b17     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00013 c19b17     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00014 c19b17     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00015 c19b17     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00016 c19b17     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00017 c19b17     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00018 c19b17     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00019 c19b17     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00020 c19b17     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00021 c19b17     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00022 c19b17     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00023 c19b17     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00024 c15b02     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00025 c15b02     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00026 c15b02     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00027 c15b02     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00028 c15b02     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00029 c15b02     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00030 c15b02     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00031 c15b02     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00032 c15b02     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00033 c15b02     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00034 c15b02     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00035 c15b02     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00036 c19b15     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00037 c19b15     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00038 c19b15     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00039 c19b15     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00040 c19b15     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00041 c19b15     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00042 c19b15     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00043 c19b15     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00044 c19b15     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00045 c19b15     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00046 c19b15     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00047 c19b15     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00048 c26b15     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00049 c26b15     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00050 c26b15     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00051 c26b15     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00052 c26b15     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00053 c26b15     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00054 c26b15     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00055 c26b15     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00056 c26b15     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00057 c26b15     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00058 c26b15     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+00059 c26b15     ./mpi -b 40000 -  Done                     08/30/2012 23:56:26
+
+
+PS:
+
+Read file <./e_60.836339> for stderr output of this job.
+

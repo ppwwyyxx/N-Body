@@ -1,0 +1,15 @@
+set term png enhanced
+set output "ball.png"
+set xlabel 'nball'
+set ylabel "Time (Seconds)"
+#set xtics ( "40" 400000, "60" 600000, "80" 800000, "100" 1000000, "120" 1200000)
+
+
+plot \
+"proc24" with linespoints ,\
+"proc48" with linespoints ,\
+"proc60" with linespoints ,\
+"proc72" with linespoints 
+
+
+

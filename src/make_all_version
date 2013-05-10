@@ -1,0 +1,30 @@
+#!/bin/bash
+# File: make_all_version
+# Date: Thu Aug 30 14:40:32 2012 +0800
+# Author: Yuxin Wu <ppwwyyxxc@gmail.com>
+
+make cleanbuild >/dev/null
+echo "make seq verson ..."
+make -j4 >/dev/null
+mv main seq
+echo "done"
+
+echo "make omp version ..."
+make cleanbuild >/dev/null
+DEFINES=-DUSE_OMP make -j4 >/dev/null
+mv main omp
+echo "done"
+
+echo "make pthread version ..."
+make cleanbuild >/dev/null
+DEFINES=-DUSE_PTH make -j4 >/dev/null
+mv main pthread
+echo "done"
+
+echo "make mpi version ..."
+make cleanbuild >/dev/null
+DEFINES=-DUSE_MPI make -j4 >/dev/null
+mv main mpi 
+echo "done"
+
+make cleanbuild >/dev/null

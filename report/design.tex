@@ -1,0 +1,27 @@
+% File: design.tex
+% Date: Fri Aug 31 00:50:19 2012 +0800
+% Author: Yuxin Wu <ppwwyyxxc@gmail.com>
+\section{Design}
+	程序通过编译选项\verb|-DUSE_MPI, -DUSE_OMP, -DUSE_PTH|指定使用的多线程库,如果在命令行中选择了\verb|-t|选项,
+	则程序直接进入循环计算,完成指定次数的计算后输出时间.
+	否则程序会初始化gtk,利用\verb|timeout_signal|方式定时调用计算函数,并在屏幕上输出图像,直至GUI被关闭.
+
+	当定义了\verb|USE_OMP|宏时,程序调用\verb|NBody::omp()|函数进行计算,函数中循环体前有\verb|#pragma omp parallel for schedule(dynamic)|一行,
+	对下方的for循环自动进行了动态多线程任务调度.循环体中使用的\verb|NBody::vel_change(), NBody::collision_change()|
+	函数分别用于计算引力与碰撞对物体状态造成的改变,被所有多进程模块调用.
+	
+	当定义了\verb|USE_PTH|宏时,程序调用\verb|NBody::pthread()|函数.
+	函数创建\verb|nproc|个线程,每个线程每次领取\verb|pth_unit|个物体的计算任务,并使用变量\verb|int now|用于记录当前未领的任务.
+	对每个线程,在需要领取任务时将\verb|now_mutex|锁定,将\verb|now|更新,再解锁.
+	引力计算结束后,调用\verb|pthread_barrier_wait|实现同步,再用同样的策略计算碰撞.
+	
+	当定义了\verb|USE_MPI|宏时,root进程调用\verb|NBody::mpi_master()|函数,其他进程从\verb|main()|中直接调用\verb|NBody::mpi_salve()|
+	函数.
+	root进程只负责进行任务调度,将任务以\verb|mpi_unit|个为一组发送.
+	各进程接收root发送的BEGIN信息以及任务的起始编号,便开始计算,计算完成后向root进程发送FINISH信息及计算数据.
+	当引力计算完毕时,root进程发送EXIT信息,随后各进程调用\verb|NBody::share_data()|
+	共享root进程的全部数据,然后用同样方法进行碰撞计算.
+	随后,如果需要计算墙壁碰撞,则由root进程对所有物体遍历.之后由root进程更新位置并与其他进程广播.
+
+
+

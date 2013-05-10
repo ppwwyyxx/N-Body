@@ -1,0 +1,66 @@
+Sender: LSF System <lsfadmin@c16b14>
+Subject: Job 836434: <mpirun.lsf ./mpi -b 60000 -t 15> Done
+
+Job <mpirun.lsf ./mpi -b 60000 -t 15> was submitted from host <ln0> by user <2011011271> in cluster <cluster1>.
+Job was executed on host(s) <12*c16b14>, in queue <short>, as user <2011011271> in cluster <cluster1>.
+                            <12*c19b18>
+</tmp/.lsbtmp679> was used as the home directory.
+</home/course/2012/zhyq/2011011271/WORK> was used as the working directory.
+Started at Fri Aug 31 00:54:24 2012
+Results reported at Fri Aug 31 00:57:47 2012
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+mpirun.lsf ./mpi -b 60000 -t 15
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time   :   4621.05 sec.
+    Max Memory :       429 MB
+    Max Swap   :      5829 MB
+
+    Max Processes  :        29
+    Max Threads    :        90
+
+The output (if any) follows:
+
+192.491098 seconds in total...
+Job  /jobmgr/lsf8.0/8.0/linux2.6-glibc2.3-x86_64/bin/intelmpi_wrapper ./mpi -b 60000 -t 15
+
+TID   HOST_NAME   COMMAND_LINE            STATUS            TERMINATION_TIME
+===== ========== ================  =======================  ===================
+00000 c19b18     ./mpi -b 60000 -  Done                     08/31/2012 00:57:43
+00001 c19b18     ./mpi -b 60000 -  Done                     08/31/2012 00:57:43
+00002 c19b18     ./mpi -b 60000 -  Done                     08/31/2012 00:57:43
+00003 c19b18     ./mpi -b 60000 -  Done                     08/31/2012 00:57:43
+00004 c19b18     ./mpi -b 60000 -  Done                     08/31/2012 00:57:43
+00005 c19b18     ./mpi -b 60000 -  Done                     08/31/2012 00:57:43
+00006 c19b18     ./mpi -b 60000 -  Done                     08/31/2012 00:57:43
+00007 c19b18     ./mpi -b 60000 -  Done                     08/31/2012 00:57:43
+00008 c19b18     ./mpi -b 60000 -  Done                     08/31/2012 00:57:43
+00009 c19b18     ./mpi -b 60000 -  Done                     08/31/2012 00:57:43
+00010 c19b18     ./mpi -b 60000 -  Done                     08/31/2012 00:57:43
+00011 c19b18     ./mpi -b 60000 -  Done                     08/31/2012 00:57:43
+00012 c16b14     ./mpi -b 60000 -  Done                     08/31/2012 00:57:43
+00013 c16b14     ./mpi -b 60000 -  Done                     08/31/2012 00:57:43
+00014 c16b14     ./mpi -b 60000 -  Done                     08/31/2012 00:57:43
+00015 c16b14     ./mpi -b 60000 -  Done                     08/31/2012 00:57:43
+00016 c16b14     ./mpi -b 60000 -  Done                     08/31/2012 00:57:43
+00017 c16b14     ./mpi -b 60000 -  Done                     08/31/2012 00:57:43
+00018 c16b14     ./mpi -b 60000 -  Done                     08/31/2012 00:57:43
+00019 c16b14     ./mpi -b 60000 -  Done                     08/31/2012 00:57:43
+00020 c16b14     ./mpi -b 60000 -  Done                     08/31/2012 00:57:43
+00021 c16b14     ./mpi -b 60000 -  Done                     08/31/2012 00:57:43
+00022 c16b14     ./mpi -b 60000 -  Done                     08/31/2012 00:57:43
+00023 c16b14     ./mpi -b 60000 -  Done                     08/31/2012 00:57:43
+
+
+PS:
+
+Read file <./e_24.836434> for stderr output of this job.
+

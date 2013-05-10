@@ -1,0 +1,70 @@
+% File: title.tex
+% Date: Thu Aug 30 16:04:07 2012 +0800
+% Author: Yuxin Wu <ppwwyyxxc@gmail.com>
+
+\newcommand{\HUGE}{\fontsize{29pt}{29pt}\selectfont} 
+\renewcommand{\today}{\number\year 年 \number\month 月 \number\day 日}
+\begin{titlepage} 
+
+% 首行的位置往上调整。但vspace前面需要有东西才会起效。
+
+\phantom{Start!}
+
+\vspace{-1.7cm} 
+
+\begin{flushleft}
+
+\emph{\Large 清华大学计算机系}\\[0.2cm]
+
+\emph{\Large 并行程序设计}\\[4.2cm] 
+
+% Title
+
+%{ \Large \bfseries 程序设计作业一}\\[0.4cm]
+
+
+{ \Huge \bfseries N-Body Problem}\\[0.4cm]
+
+%{ \Large \bfseries 实现报告} \\[0.4cm]
+
+\end{flushleft}
+
+  
+
+ 
+
+\vfill 
+
+ 
+
+\begin{flushright}
+
+{
+
+%\setCJKmainfont{Adobe Kaiti Std}
+
+% \pillar：使用一种统一的方法提高行高
+
+\newcommand{\pillar}{ {\Huge \phantom{A}} }
+
+\large
+
+\begin{tabular}{lc}
+
+\pillar 姓名 & 吴育昕\\\cline{2-2}
+
+\pillar 学号 & 2011011271\\\cline{2-2}
+
+\pillar 邮箱 & ppwwyyxxc@gmail.com \\\cline{2-2}
+
+\pillar 时间 & 2012年8月 \\\cline{2-2}
+
+%\pillar 报告日期 & 2012年3月22日 \\\cline{2-2}
+
+\end{tabular}
+
+} 
+
+\end{flushright} 
+
+\end{titlepage} 

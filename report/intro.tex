@@ -1,0 +1,89 @@
+% File: intro.tex
+% Date: Tue Mar 26 18:42:16 2013 +0800
+% Author: Yuxin Wu <ppwwyyxxc@gmail.com>
+\section{Introduction}
+
+\begin{enumerate}
+	\item 编译:
+		程序共有四个版本,分别为串行,MPI,OpenMP,pthread.需通过改变环境变量\verb|DEFINES|分别编译.源码中提供了一个脚本\verb|make_all_version|可以一次性编译出四个可执行文件.
+		编译并行版本的环境变量分别为\verb|DEFINES=-DUSE_OMP, -DUSE_MPI, -DUSE_PTH|,单独编译时,可执行文件为\verb|main|
+\begin{lstlisting}
+$ ./make_all_version
+make seq verson ...
+done
+make omp version ...
+done
+make pthread version ...
+done
+make mpi version ...
+done
+$ DEFINES=-DUSE_OMP make
+[dep] main.cc ...
+[dep] Gui.cc ...
+[dep] Body.cc ...
+[dep] utils.cc ...
+[dep] common.cc ...
+[dep] NBody.cc ...
+[dep] NBody_Parallel.cc ...
+[cc] NBody_Parallel.cc ...
+[cc] NBody.cc ...
+[cc] utils.cc ...
+[cc] common.cc ...
+[cc] Body.cc ...
+[cc] Gui.cc ...
+[cc] main.cc ...
+Linking ...
+$
+\end{lstlisting}
+
+\item 命令行参数:
+	\begin{lstlisting}[basicstyle=\tiny\ttfamily]
+$ ./main -h
+Usage:
+    ./main -b NUM [-r <switch>] [-w <switch>] [-n <NUM_OF_PROC>] [-s <SIZE>] [-t <STEP>] [-h]
+Options:
+    --ball=NUM,  -b      number of balls. Default: 20.
+    --disp=0/1,  -d      a switch on display mode containing a big ball. Default: 1
+    --wall=0/1,  -w      a switch on whether to use window border as walls. Default: 1
+    --nproc=NUM, -n      number of threads(pthread only). number of CPUs by default
+    --size=SIZE, -s      size of window(by pixels). Format: [width]x[height]
+                         eg. 1200x800 (default)
+    --step=NUM,  -t      number of loops to operate in simulation.
+                         NOTE: GUI will be off to calculate time.
+    --help,              -h      print help.
+\end{lstlisting}
+程序支持如下的命令行参数:
+\begin{description}
+	\item \verb|--ball=NUM|指定小球个数.
+	\item \verb|--disp=0/1,--wall=0/1|演示开关与墙壁开关.
+	\item \verb|--nproc=NUM|指定pthread使用的线程数量,对其他多线程模式无效.
+	\item \verb|--size=SIZE|指定窗口大小.
+	\item \verb|--step=NUM|指定循环次数.
+	\item \verb|--help|输出帮助信息.
+\end{description}
+
+\item 测试运行:
+\begin{lstlisting}
+$ ./main -b 200 -t 200
+0.748785 seconds in total...
+$
+\end{lstlisting}
+
+\item 界面展示:
+\begin{lstlisting}
+$ ./main
+10.636224 seconds in total...
+$ ./main -d 0
+14.245977 seconds in total...
+\end{lstlisting}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{res/screen.png}
+	\includegraphics[scale=0.4]{res/screen2.png}
+\end{figure}
+
+
+在窗口中,可使用空格键进行暂停,鼠标左中右键点击屏幕,可查看距点击位置最近的小球信息.按ESC键退出.
+
+\end{enumerate}

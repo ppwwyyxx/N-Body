@@ -1,0 +1,16 @@
+
+set term png enhanced
+set output "iter.png"
+set xlabel 'nproc'
+set ylabel "Time (Seconds)"
+#set xtics ( "40" 400000, "60" 600000, "80" 800000, "100" 1000000, "120" 1200000)
+
+
+plot "iter_5" with linespoints ,\
+	"iter_10" with linespoints ,\
+	"iter_15" with linespoints ,\
+	"iter_20" with linespoints ,\
+	"iter_30" with linespoints ,\
+	"iter_50" with linespoints 
+
+
