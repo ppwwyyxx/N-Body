@@ -3,7 +3,7 @@
 This is a small gtk program of [N-Body Simulation](http://en.wikipedia.org/wiki/N-body_simulation) implemented by multi-thread / multi-process programming library.
 
 ## Compile
-Dependencies: openmpi
+Dependencies: [openmpi](http://www.open-mpi.org/)
 
 Compile:
 ```
@@ -18,7 +18,7 @@ $ ./omp
 ![demo](https://github.com/ppwwyyxx/N-Body/raw/master/report/res/screen.png)
 
 ```
-$ ./omp -d 0
+$ ./omp -d 0		(close display mode)
 ```
 ![demo2](https://github.com/ppwwyyxx/N-Body/raw/master/report/res/screen2.png)
 
