@@ -1,5 +1,5 @@
 // File: Gui.cc
-// Date: Sat Oct 06 01:20:13 2012 +0800
+// Date: Sat May 11 23:35:48 2013 +0800
 // Author: Yuxin Wu <ppwwyyxxc@gmail.com>
 
 #include "Gui.hh"
@@ -11,13 +11,11 @@ bool all_pause = false;
 extern int myid, nproc;
 int nowstep = 0;
 
-gboolean delete_event(GtkWidget *, GdkEvent *, gpointer) {
-	return FALSE;
-}
+gboolean delete_event(GtkWidget *, GdkEvent *, gpointer)
+{ return FALSE; }
 
-void destroy(GtkWidget *, gpointer) {
-	gtk_main_quit();
-}
+void destroy(GtkWidget *, gpointer)
+{ gtk_main_quit(); }
 
 gboolean cb_timeout(GtkWidget *widget) {
 	if (widget->window == NULL)
@@ -29,7 +27,7 @@ gboolean cb_timeout(GtkWidget *widget) {
 void draw_all(GtkWidget *widget){
 	cairo_t *cr = gdk_cairo_create(widget->window);
 
-	// clear 
+	// clear
 	cairo_save (cr);
 	cairo_set_source_rgb(cr, 0.0, 0.0, 0.0);
 	cairo_set_operator (cr, CAIRO_OPERATOR_CLEAR);
@@ -41,7 +39,7 @@ void draw_all(GtkWidget *widget){
 
 		cairo_save(cr);
 
-		cairo_set_source_rgb(cr, body.rr, body.g,body.b);
+		cairo_set_source_rgb(cr, body.rr, body.gg, body.bb);
 		cairo_new_path(cr);
 		cairo_arc(cr, body.pos.x, body.pos.y, body.r, 0, 2 * M_PI);
 		cairo_close_path(cr);
@@ -97,13 +95,13 @@ gboolean cb_clicked(GtkWidget *, GdkEventButton *event, gpointer){
 				 RIGHT = 3;
 	int cx = event->x, cy = event->y;
 	Body& body = world.get_body(Vec(cx, cy));
-	if (event->button == LEFT){
+
+	if (event->button == LEFT)
 		cout << "pos -- " << body.pos << endl;
-	} else if (event->button == RIGHT){
+	else if (event->button == RIGHT)
 		cout << "vel -- " << body.v << endl;
-	} else {
+	else
 		cout << "radius: " << body.r << "; mass: " << body.m << endl;
-	}
 	return TRUE;
 }
 

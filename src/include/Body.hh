@@ -1,5 +1,5 @@
 // File: Body.hh
-// Date: Fri Aug 31 11:52:57 2012 +0800
+// Date: Sat May 11 23:34:04 2013 +0800
 // Author: Yuxin Wu <ppwwyyxxc@gmail.com>
 
 #ifndef __HEAD__BODY
@@ -19,7 +19,7 @@ class Body {
 		}
 
 		Vec pos, v;
-		real_t r,m;
+		real_t r, m;
 		int index;
 
 		void cal_vel(const Body& b, const real_t dt);
@@ -27,15 +27,15 @@ class Body {
 		void move(real_t dt);
 
 		void random_init();
-		void set_r(real_t m_r){
+		void set_r(real_t m_r) {
 			r = m_r, m = r * r;
 			rr = (double)(rand() % 70 + 30) / 100,
-			  g = (double)(rand() % 70 + 30) / 100,
-			  b = (double)(rand() % 70 + 30) / 100;
-		
+			gg = (double)(rand() % 70 + 30) / 100,
+			bb = (double)(rand() % 70 + 30) / 100;
 		}
 		void judge_border(const real_t dt);
-		double rr, g, b;
+
+		double rr, gg, bb;
 };
 
 

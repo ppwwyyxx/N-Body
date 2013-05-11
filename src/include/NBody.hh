@@ -1,5 +1,5 @@
 // File: NBody.hh
-// Date: Thu Aug 30 15:48:15 2012 +0800
+// Date: Sat May 11 23:36:20 2013 +0800
 // Author: Yuxin Wu <ppwwyyxxc@gmail.com>
 
 #ifndef __HEAD__NBODY
@@ -25,16 +25,16 @@ void* thread_do_caller(void* intptr);
 
 class NBody {
 	public:
-		NBody(){};
-		NBody(int n, real_t m_dt){
-			MAXN = n;
-			b = new Body[MAXN];
-			dt = m_dt;
-		}
-		~NBody(){};
 		int MAXN;
 		real_t dt;
 		Body* b;
+
+		NBody(){};
+		NBody(int n, real_t m_dt):MAXN(n), dt(m_dt)
+		{ b = new Body[MAXN]; }
+
+		~NBody()
+		{ delete[] b; }
 
 		void init();
 		void step();
@@ -60,6 +60,7 @@ class NBody {
 
 
 };
+
 extern NBody world;
 
 

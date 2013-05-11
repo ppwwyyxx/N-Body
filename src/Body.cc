@@ -1,16 +1,14 @@
 // File: Body.cc
-// Date: Fri Aug 31 00:47:55 2012 +0800
+// Date: Sat May 11 23:29:56 2013 +0800
 // Author: Yuxin Wu <ppwwyyxxc@gmail.com>
 
 #include "Body.hh"
- 
-inline real_t distsqr(const Body& b1, const Body& b2){
-	return (b1.pos - b2.pos).sqr();
-}
 
-inline real_t dist(const Body& b1, const Body& b2){
-	return sqrt(distsqr(b1, b2));
-}
+inline real_t distsqr(const Body& b1, const Body& b2)
+{ return (b1.pos - b2.pos).sqr(); }
+
+inline real_t dist(const Body& b1, const Body& b2)
+{ return sqrt(distsqr(b1, b2)); }
 
 
 inline void cal_vel_two(Body& b1, const Body& b2, const real_t dt){
@@ -20,12 +18,12 @@ inline void cal_vel_two(Body& b1, const Body& b2, const real_t dt){
 	return;
 }
 
-real_t col_time(const Body &b1, const Body &b2, const real_t dt){   
+real_t col_time(const Body &b1, const Body &b2, const real_t dt){
 	// calculate whether they will collide in dt, if yes, return collision time, else return -1
 	// equal to solve |b1.pos - b2.pos + t (b1.v - b2.v)| == b1.r + b2.r
-	// (b1.pos.x - b2.pos.x + t (b1.v.x - b2.v.x))^2 + 
+	// (b1.pos.x - b2.pos.x + t (b1.v.x - b2.v.x))^2 +
 	//		 (b1.pos.y - b2.pos.y + t (b1.v.y - b2.v.y))^2 == (b1.r + b2.r)^2
-	real_t dpx = b1.pos.x - b2.pos.x, dpy = b1.pos.y - b2.pos.y, 
+	real_t dpx = b1.pos.x - b2.pos.x, dpy = b1.pos.y - b2.pos.y,
 		   dvx = b1.v.x - b2.v.x, dvy = b1.v.y - b2.v.y,
 	   A = dvx * dvx + dvy * dvy,
 	   B = 2 * dpx * dvx + 2 * dpy * dvy,
@@ -53,26 +51,21 @@ bool overlap(const Body &b1, const Body &b2){
 }
 
 bool tooclose(const Body &b1, const Body &b2){
-	if (abs(b1.pos.x - b2.pos.x) < EPS) 
+	if (abs(b1.pos.x - b2.pos.x) < EPS)
 		if (abs(b1.pos.y - b2.pos.y) < EPS)
 			return true;
 	return false;
 }
 
-void Body::cal_vel(const Body &b, const real_t dt){
-	cal_vel_two(*this, b, dt);
-	return;
-}
+void Body::cal_vel(const Body &b, const real_t dt)
+{ cal_vel_two(*this, b, dt); }
 
 
-void Body::col_vel(const Body& b){
-	col_vel_two(*this, b);
-}
+void Body::col_vel(const Body& b)
+{ col_vel_two(*this, b); }
 
-void Body::move(real_t dt){
-	pos += dt * v;
-	return;
-}
+void Body::move(real_t dt)
+{ pos += dt * v; }
 
 void Body::random_init(){
 	pos.x = rand() % SIZE_X;
