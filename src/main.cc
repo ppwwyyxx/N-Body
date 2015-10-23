@@ -31,7 +31,7 @@ NBody world;
 int myid, nproc;
 int nstep = 0;
 bool disp = true,
-	 wall = true;
+		 wall = true;
 
 int main(int argc, char* argv[]){
 	double t1 = 0, t2;
@@ -83,7 +83,6 @@ int main(int argc, char* argv[]){
 		t2 = end.tv_sec + end.tv_usec / 1e6;
 		printf("%lf seconds in total...\n", t2 - t1);
 	}
-	delete [] world.b;
 #ifdef USE_MPI
 	MPI_Finalize();
 #endif

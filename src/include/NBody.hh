@@ -13,6 +13,7 @@
 #include <algorithm>
 #include <climits>
 #include <cassert>
+#include <vector>
 
 #include "common.hh"
 #include "utils.hh"
@@ -27,14 +28,12 @@ class NBody {
 	public:
 		int MAXN;
 		real_t dt;
-		Body* b;
+		vector<Body> b;
 
 		NBody(){};
-		NBody(int n, real_t m_dt):MAXN(n), dt(m_dt)
-		{ b = new Body[MAXN]; }
-
-		~NBody()
-		{ delete[] b; }
+		NBody(int n, real_t m_dt):
+			MAXN(n), dt(m_dt), b(MAXN)
+		{}
 
 		void init();
 		void step();
